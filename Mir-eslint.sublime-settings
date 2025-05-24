@@ -1,0 +1,2 @@
+// Mir-eslint.sublime-settings
+{"codeAction": {"disableRuleComment": {"commentStyle": "line", "enable": true, "location": "separateLine"}, "showDocumentation": {"enable": true}}, "codeActionOnSave": {"enable": true, "mode": "all"}, "format": false, "ignoreUntitled": false, "nodePath": null, "onIgnoredFiles": "off", "options": {}, "problems": {"shortenToSingleLine": false}, "quiet": false, "rulesCustomizations": [], "run": "onType", "useESLintClass": false, "validate": "probe"}
