@@ -1,7 +1,7 @@
 from Mir import LanguageServer, electron_node_20, PackageStorage
 
 
-server_storage = PackageStorage(__package__, tag='0.0.1', sync_folder="./language-server")
+server_storage = PackageStorage(tag='0.0.1', sync_folder="./language-server")
 
 
 class EslintLanguageServer(LanguageServer):
