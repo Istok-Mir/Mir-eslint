@@ -1,2 +1,38 @@
 // Mir-eslint.sublime-settings
-{"codeAction": {"disableRuleComment": {"commentStyle": "line", "enable": true, "location": "separateLine"}, "showDocumentation": {"enable": true}}, "codeActionOnSave": {"enable": true, "mode": "all"}, "format": false, "ignoreUntitled": false, "nodePath": null, "onIgnoredFiles": "off", "options": {}, "problems": {"shortenToSingleLine": false}, "quiet": false, "rulesCustomizations": [], "run": "onType", "useESLintClass": false, "validate": "probe"}
+{
+    "codeAction.disableRuleComment": {
+        "enable": true,
+        "location": "separateLine",
+        "commentStyle": "line"
+    },
+    "codeAction.showDocumentation": {
+        "enable": true
+    },
+    "codeActionOnSave.enable": true,
+    "codeActionOnSave.mode": "all",
+    "format": false,
+    "ignoreUntitled": false,
+    "nodePath": null,
+    "onIgnoredFiles": "off",
+    "options": {},
+
+    "probe": [
+        "astro",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "html",
+        "mdx",
+        "vue",
+        "markdown",
+        "json",
+        "jsonc"
+    ],
+    "problems.shortenToSingleLine": false,
+    "rulesCustomizations": [],
+    "quiet": false,
+    "run": "onType",
+    "useESLintClass": false,
+    "validate": "probe"
+}

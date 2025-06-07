@@ -1,6 +1,5 @@
-from Mir import LanguageServer
-from Mir.runtime import deno
-from Mir.package_storage import PackageStorage
+from Mir import LanguageServer, electron_node_20, PackageStorage
+
 
 server_storage = PackageStorage(__package__, tag='0.0.1', sync_folder="./language-server")
 
@@ -13,9 +12,14 @@ class EslintLanguageServer(LanguageServer):
     settings_file="Mir-eslint.sublime-settings"
 
     async def activate(self):
-        await deno.setup()
+        await electron_node_20.setup()
         server_path = server_storage / "language-server" / "out" / 'eslintServer.js'
-        # no "deno install" is required for Mir-eslint
+        self.settings.set('workspaceFolder', self.initialize_params.get('workspaceFolders', [])[0])
+
+        def handle_status(_):
+            ...
+
+        self.on_notification('eslint/status', handle_status)
         await self.connect('stdio', {
-            'cmd': [deno.path, 'run', '-A', server_path, '--stdio']
+            'cmd': [electron_node_20.path, server_path, '--stdio']
         })
