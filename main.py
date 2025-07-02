@@ -29,6 +29,7 @@ class EslintLanguageServer(LanguageServer):
             ...
 
         self.on_notification('eslint/status', handle_status)
-        await self.connect('stdio', {
-            'cmd': [electron_node_20.path, server_path, '--stdio']
+        await self.initialize({
+            'communication_channel': 'stdio',
+            'command': [electron_node_20.path, server_path, '--stdio']
         })
